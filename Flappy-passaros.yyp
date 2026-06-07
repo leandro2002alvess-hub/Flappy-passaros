@@ -45,8 +45,10 @@
   "resources":[
     {"id":{"name":"oColisor","path":"objects/oColisor/oColisor.yy",},},
     {"id":{"name":"oGerador","path":"objects/oGerador/oGerador.yy",},},
+    {"id":{"name":"oPassaro","path":"objects/oPassaro/oPassaro.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
+    {"id":{"name":"scr_controlador","path":"scripts/scr_controlador/scr_controlador.yy",},},
     {"id":{"name":"bg_agua","path":"sprites/bg_agua/bg_agua.yy",},},
     {"id":{"name":"bg_arvores","path":"sprites/bg_arvores/bg_arvores.yy",},},
     {"id":{"name":"bg_fundo","path":"sprites/bg_fundo/bg_fundo.yy",},},

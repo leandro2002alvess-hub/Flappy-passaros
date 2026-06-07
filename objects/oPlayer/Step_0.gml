@@ -24,22 +24,60 @@ if(space && estou_vivo == true)
 //Criando o sistema de colisão do jogo
 //o que esse if fará? 
 //ele vai verificar se meu player está colidindo com alguma outra instancia
-//dentro da room, caso esteja então ele rodará o codigo dentro do if
-if(place_meeting(x, y , oColisor) && estou_vivo == true)
+//dentro da room, caso esteja então ele rodará o codigo dentro do if e tamberm vai verificar se estou vivo
+if(place_meeting(x, y , oColisor) || place_meeting(x, y , oPassaro)  && estou_vivo == true)
 {
     //Meu player vai morrer se eu bater na arvores
     //ao bater eu porque o poder de bater asas
     velv = 0
     forca_voo = 0
     //Ao bater tambem a gravidade será aumentada para cair pra fora da tela
-    grav = 1
+    grav = 0.1
     //ele perderá a animação
     image_index = 0
-    //e o angulo do personagem irá mudar tambem
-    image_angle++
+    image_speed = 0
+    estou_vivo = false
+    //Zerando os obstaculos se eu bati neles
+    with (oColisor) 
+    {
+        velh = 0
+        
+    }
+    with (oPassaro) 
+    {
+        velh = 0
+        
+    }
+    //Destruindo meu gerador
+    instance_destroy(oGerador)
+    //zerando meu background ao bater na arvore
+    layer_hspeed("bg_arvores", 0)
+    layer_hspeed("bg_reflexo_arvores", 0)
+    layer_hspeed("bg_reflexo", 0)
+    
 }
+
+//Ele vai verificar se meu estou vivo e falso
+if(estou_vivo == false)
+{
+    //Caso seja confirmado, então ele rodará tempo reinicio++
+    //Ou seja eu irei aumentar o valor de tempo reinicio
+    tempo_reinicio++
+    //Criando um if para informar que pode ser reiniciado a room
+    //Se meu tempo de reinicio for maior que meu tempo limite
+    if(tempo_reinicio >= tempo_reinicio_limite) 
+    {
+        //Resetando a variavel
+        tempo_reinicio = 0
+        //Então o jogo poderá ser reiniciado
+        game_restart()
+            
+    }
+}
+
+
 //Criando um novo if para ver se eu estou saindo da room pela parte de cima
-if(y < -128 && estou_vivo == true)
+if(y < -128 || y > room_height + 32 && estou_vivo == true )
 {
     //Meu player vai morrer se eu no teto
     //ao bater eu porque o poder de bater asas
@@ -47,8 +85,22 @@ if(y < -128 && estou_vivo == true)
     forca_voo = 0
     //Ao bater tambem a gravidade será aumentada para cair pra fora da tela
     //show_message("Morri")
+    //ele perderá a animação
+    image_index = 0
+    image_speed = 0
+    estou_vivo = false
+    //Destruindo meu gerador
+    instance_destroy(oGerador)
+    //zerando meu background ao bater na arvore
+    layer_hspeed("bg_arvores", 0)
+    layer_hspeed("bg_reflexo_arvores", 0)
+    layer_hspeed("bg_reflexo", 0)
 }
 
+if (estou_vivo == false)
+{
+    image_angle += 2//fazendo minha ave girar ao colidir
+}
 
 //por fim iremos colocar y+=velv ou seja ele vai pegar o meu Y da tela/room
 //e somar o valor de velv nela

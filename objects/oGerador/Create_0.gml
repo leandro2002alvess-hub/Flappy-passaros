@@ -8,4 +8,8 @@ randomize();
 tempo_spawn = 0
 tempo_spawn_limite = 90
 
+tempo_spawn_ave = 0
+tempo_spawn_ave_limite = 160
+
+
 
