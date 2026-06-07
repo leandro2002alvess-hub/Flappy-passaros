@@ -6,3 +6,6 @@
 velv = 0
 grav = 0.1
 forca_voo = 5
+
+//Criando uma variavel booleana
+estou_vivo = true

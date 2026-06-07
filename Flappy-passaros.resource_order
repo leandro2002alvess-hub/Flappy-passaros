@@ -5,6 +5,8 @@
     {"name":"Fonts","order":5,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":11,"path":"folders/Notes.yy",},
     {"name":"Objects","order":7,"path":"folders/Objects.yy",},
+    {"name":"Gerador_inimigos","order":4,"path":"folders/Objects/Gerador_inimigos.yy",},
+    {"name":"Player","order":3,"path":"folders/Objects/Player.yy",},
     {"name":"Particle Systems","order":13,"path":"folders/Particle Systems.yy",},
     {"name":"Paths","order":2,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":8,"path":"folders/Rooms.yy",},
@@ -21,6 +23,7 @@
     {"name":"Timelines","order":6,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"oColisor","order":1,"path":"objects/oColisor/oColisor.yy",},
     {"name":"bg_agua","order":4,"path":"sprites/bg_agua/bg_agua.yy",},
     {"name":"bg_arvores","order":3,"path":"sprites/bg_arvores/bg_arvores.yy",},
     {"name":"bg_lua","order":1,"path":"sprites/bg_lua/bg_lua.yy",},
