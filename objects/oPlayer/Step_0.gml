@@ -67,6 +67,9 @@ if(estou_vivo == false)
     //Se meu tempo de reinicio for maior que meu tempo limite
     if(tempo_reinicio >= tempo_reinicio_limite) 
     {
+        //Se eu morri então reseto meus pontos tambem
+        global.pontos = 0
+        global.levels = 0
         //Resetando a variavel
         tempo_reinicio = 0
         //Então o jogo poderá ser reiniciado
@@ -95,6 +98,17 @@ if(y < -128 || y > room_height + 32 && estou_vivo == true )
     layer_hspeed("bg_arvores", 0)
     layer_hspeed("bg_reflexo_arvores", 0)
     layer_hspeed("bg_reflexo", 0)
+    with (oColisor) 
+    {
+        velh = 0
+        
+    }
+    with (oPassaro) 
+    {
+        velh = 0
+        
+    }
+    
 }
 
 if (estou_vivo == false)
@@ -105,3 +119,20 @@ if (estou_vivo == false)
 //por fim iremos colocar y+=velv ou seja ele vai pegar o meu Y da tela/room
 //e somar o valor de velv nela
 y += velv
+
+
+
+//Criando um if para gerar nossos pontos
+//Fazendo eu ganhar tempo_pontos
+tempo_pontos++
+//Rodando meu if se meu tempo pontos for maior ou igual ao meu limite e juntamente
+//estiver vivo então ele rodará o codigo dentro do if
+if(tempo_pontos >= tempo_pontos_limite && estou_vivo == true)
+{
+    //Fazendo eu ganhar mais pontos durante a gameplay
+    global.pontos += 1
+    //Dando reset na variavel de tempo
+    tempo_pontos = 0
+    //debugando
+    //show_debug_message(global.pontos)
+}

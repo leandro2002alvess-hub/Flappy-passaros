@@ -14,3 +14,7 @@ estou_vivo = true
 tempo_reinicio = 0
 //Tempo limite será de 60 frames
 tempo_reinicio_limite = 60
+
+//Criando um timer para me gerar pontos enquanto estiver vivo
+tempo_pontos = 0
+tempo_pontos_limite = 10

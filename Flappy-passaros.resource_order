@@ -23,8 +23,11 @@
     {"name":"Timelines","order":6,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"oColetavel","order":6,"path":"objects/oColetavel/oColetavel.yy",},
     {"name":"oColisor","order":1,"path":"objects/oColisor/oColisor.yy",},
+    {"name":"oLevel","order":5,"path":"objects/oLevel/oLevel.yy",},
     {"name":"oPassaro","order":2,"path":"objects/oPassaro/oPassaro.yy",},
+    {"name":"snd_gameplay","order":1,"path":"sounds/snd_gameplay/snd_gameplay.yy",},
     {"name":"bg_agua","order":4,"path":"sprites/bg_agua/bg_agua.yy",},
     {"name":"bg_arvores","order":3,"path":"sprites/bg_arvores/bg_arvores.yy",},
     {"name":"bg_lua","order":1,"path":"sprites/bg_lua/bg_lua.yy",},

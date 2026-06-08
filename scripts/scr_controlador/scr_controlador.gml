@@ -3,4 +3,7 @@
 
 
 //Criando o sistema de pontos do nosso jogo 
-global.pontos = 0
+global.pontos = 0.0
+
+//Criando o sistema de leveis do meu jogo
+global.levels = 0

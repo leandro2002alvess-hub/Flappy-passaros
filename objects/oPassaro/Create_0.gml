@@ -2,4 +2,4 @@
 // Você pode escrever seu código neste editor
 
 //Criando o sistema de movimento da arvores
-velh = 4
+velh = -4 -global.levels

@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 //Criando os movimentos da arvores
-x -= velh
+x += velh
 //Ele vai pegar o meu X da tela/room e subtrair com base no velh 
 //Criando assim um movimento horizontal
 

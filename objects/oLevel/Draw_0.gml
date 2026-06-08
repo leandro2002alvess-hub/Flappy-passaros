@@ -1,5 +1,4 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+draw_self()
 
-//Criando o sistema de movimento da arvores
-velh = -4 -global.levels
