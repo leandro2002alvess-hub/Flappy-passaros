@@ -13,6 +13,8 @@ if(global.pontos >= limite_pontos && global.levels == level_atual )
     image_index++
     //e o valor limite de 100 pontos vai aumentar para mais 100
     limite_pontos += 100
+    //Toda vez que eu ganhar nivel eu escuto um som
+    audio_play_sound(snd_levelup, 1, 0)
     //Aumetando a velocidade de tudo caso eu passe proximo level
     //with (oPassaro) 
     //{

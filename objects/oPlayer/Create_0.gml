@@ -18,3 +18,5 @@ tempo_reinicio_limite = 60
 //Criando um timer para me gerar pontos enquanto estiver vivo
 tempo_pontos = 0
 tempo_pontos_limite = 10
+
+audio_play_sound(snd_gameplay, 1 ,1)

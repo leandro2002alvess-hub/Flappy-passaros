@@ -7,3 +7,10 @@ global.pontos = 0.0
 
 //Criando o sistema de leveis do meu jogo
 global.levels = 0
+
+global.coletaveis = 0
+
+global.opcao_selecionada = 0
+
+global.skin_equipada = 0
+

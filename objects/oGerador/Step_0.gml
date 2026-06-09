@@ -34,3 +34,20 @@ if(tempo_spawn_ave >= tempo_spawn_ave_limite)
     //Resetando o tempo_spawn para poder ter um limite de geração das arvores
 }
 
+//Criando o sistema de spawn do meu coletavel
+//Fazendo o tempo_spawn ter um aumento de valor
+//Ou seja ele irá ganhar mais tempo
+tempo_spawn_coletavel++
+//Criando o if para verificar se meu tempo spawn e maior que o tempo spawn limite
+if(tempo_spawn_coletavel >= tempo_spawn_coletavel_limite)
+{
+    //Criando um sistema de coordenadas aleatorias
+    //para deixar o spawn das arvores melhores
+    var coordy_passaro = random_range(10, 150)
+    //Se ele for maior então ele cria as arvores
+    //Criando o spawn das arvores
+    var cria_arvores = instance_create_layer(x, coordy_passaro, "oColetavel", oColetavel)
+    tempo_spawn_coletavel = 0
+    //Resetando o tempo_spawn para poder ter um limite de geração das arvores
+}
+

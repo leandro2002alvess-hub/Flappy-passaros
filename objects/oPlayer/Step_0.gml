@@ -1,6 +1,20 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+//Criando um sistema de skins no meu jogo
+if(global.skin_equipada == 0)
+{
+    sprite_index = spr_player
+}
+if(global.skin_equipada == 1)
+{
+    sprite_index = spr_player_skin_carcara
+}
+if(global.skin_equipada == 2)
+{
+    sprite_index = spr_player_skin_coruja
+}
+
 //Criando o sistema de movimentos da nossa ave
 var space = keyboard_check_pressed(vk_space)
 //Verificando para ver se estou apertando espaço 
@@ -9,9 +23,11 @@ var space = keyboard_check_pressed(vk_space)
 //minha velv armazenara o valor da gravidade dentro dela
 velv += grav
 
+
 //Se eu aperta espaço e eu estiver vivo ou seja a variavel for verdadeira
 if(space && estou_vivo == true)
 {
+    
     //Então ele irá dizer
     //velv voce se referente a -forca_voo
     //ou seja ele diz para meu velv ser igual a -forca_voo
@@ -54,17 +70,32 @@ if(place_meeting(x, y , oColisor) || place_meeting(x, y , oPassaro)  && estou_vi
     layer_hspeed("bg_arvores", 0)
     layer_hspeed("bg_reflexo_arvores", 0)
     layer_hspeed("bg_reflexo", 0)
+    audio_stop_sound(snd_gameplay)
+    
     
 }
 
 //Ele vai verificar se meu estou vivo e falso
 if(estou_vivo == false)
 {
+    
     //Caso seja confirmado, então ele rodará tempo reinicio++
     //Ou seja eu irei aumentar o valor de tempo reinicio
     tempo_reinicio++
     //Criando um if para informar que pode ser reiniciado a room
     //Se meu tempo de reinicio for maior que meu tempo limite
+    // A Ignição: Apertou enter, liga o cronômetro
+    if (estou_vivo == false) 
+    {
+        comecou_cronometro = true;
+        // Cria a layer se ela não existir para não dar o erro de antes
+        if (!layer_exists("Transicao")) 
+        {
+            layer_create(1, "Transicao");
+        }
+        // Cria a transição bem no momento do clique
+        layer_sequence_create("Transicao", 0, 0, sq_transicao2);
+    }
     if(tempo_reinicio >= tempo_reinicio_limite) 
     {
         //Se eu morri então reseto meus pontos tambem
@@ -73,7 +104,7 @@ if(estou_vivo == false)
         //Resetando a variavel
         tempo_reinicio = 0
         //Então o jogo poderá ser reiniciado
-        game_restart()
+        room_goto(rm_menu)
             
     }
 }
@@ -108,6 +139,7 @@ if(y < -128 || y > room_height + 32 && estou_vivo == true )
         velh = 0
         
     }
+    audio_stop_sound(snd_gameplay)
     
 }
 
@@ -135,4 +167,18 @@ if(tempo_pontos >= tempo_pontos_limite && estou_vivo == true)
     tempo_pontos = 0
     //debugando
     //show_debug_message(global.pontos)
+}
+
+var _item = instance_place(x, y, oColetavel);
+//Criando o sistema de colisão com os coletaveis
+//Se eu colidir com o coletavel e estiver dentro da condição do vivo
+if(_item && estou_vivo == true && _item.foi_pego == false)
+{
+    
+    //Então eu ganho um ponto de coletaveis
+    global.coletaveis+= 1
+    audio_play_sound(snd_coleta, 1, 0)
+    _item.foi_pego = true
+    //Se eu peguei o coletavel então ele fica sem velocidade
+    _item.velh = 0
 }

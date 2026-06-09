@@ -11,5 +11,6 @@ tempo_spawn_limite = 90
 tempo_spawn_ave = 0
 tempo_spawn_ave_limite = 160
 
-
+tempo_spawn_coletavel = 0
+tempo_spawn_coletavel_limite = 300
 
